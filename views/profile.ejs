@@ -1,0 +1,21 @@
+<% include _header %>
+  <div class="container">
+    <div class="row">
+      <% if((currentUser) && (currentUser.id === user.id)) { %>
+        <a href="/edit" class="btn btn-primary pull-right">Edit Profile</a>
+      <% } %>
+      <h1><%= user.name() %></h1>
+      <h2>Date joined: <%= user.createdAt %></h2>
+
+      <% if(user.bio){ %>
+        <p>
+          <%= user.bio %>
+        </p>
+      <% } else { %>
+        <h4>
+          This user not set their biography yet..
+        </h4>
+      <% } %>
+    </div>
+  </div>
+<% include _footer %>
