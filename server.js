@@ -21,7 +21,7 @@ lam_express.use(logger('dev'));
 lam_express.set('port', process.env.PORT || 3000);
 
 lam_express.set('views', path.join(__dirname, 'views'));
-lam_express.set('view engines', 'ejs');
+lam_express.set('view engine', 'ejs');
 
 // use four middlewares
 lam_express.use(bodyParser.urlencoded({extended: false}));
@@ -32,7 +32,7 @@ lam_express.use(session({
   saveUninitialized: true
 }));
 
-lam_express.use(flash);
+lam_express.use(flash());
 lam_express.use(routes);
 
 lam_express.listen(lam_express.get("port"), function(){

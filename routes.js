@@ -24,8 +24,10 @@ router.get('/', function(req, res, next){
 
     res.render("index", {users: users});
   });
-
-  next();
 });
+
+router.use(function(req, res){
+  res.status(404).render('404');
+})
 
 module.exports = router;
